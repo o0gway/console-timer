@@ -45,7 +45,7 @@ def main():
                 json.dump(last_timer, file)
 
         # random sound for timer
-        random_sound = randint(1, 12)
+        random_sound = randint(1, 6)
 
         # Start clear console
         clear_console()
@@ -64,11 +64,7 @@ def main():
 
         print('Ваше время истекло...')
         # Start alarm timer
-        for _ in range(3):
-            winsound.PlaySound(os.path.join(f"media/{random_sound}.wav"), winsound.SND_FILENAME)
-            time.sleep(3)
-
-
+        winsound.PlaySound(os.path.join(f"media/{random_sound}.wav"), winsound.SND_FILENAME)
 
         # Check user choice for repeat timer
         answer = input('Запустить таймер еще раз(Y/N)?: ').lower()
